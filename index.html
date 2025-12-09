@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tech a Dois - Portfólio Landing Pages</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      overflow-x: hidden;
+      background: #0f0f1e;
+    }
+
+    /* Header */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 20px 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(15, 15, 30, 0.95);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      border-bottom: 1px solid rgba(37, 99, 235, 0.2);
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: 700;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo span {
+      color: #2563eb;
+    }
+
+    nav {
+      display: flex;
+      gap: 40px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+      position: relative;
+    }
+
+    nav a:hover {
+      color: #2563eb;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: #2563eb;
+      transition: width 0.3s;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    .cta-button {
+      background: #2563eb;
+      color: #fff;
+      padding: 12px 30px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s;
+      box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
+    }
+
+    .cta-button:hover {
+      background: #1d4ed8;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(37, 99, 235, 0.6);
+    }
+
+    /* Hero Section */
+    .hero {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 50%, #3b82f6 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      padding: 100px 50px 50px;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      top: -200px;
+      right: -200px;
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 50%;
+      bottom: -100px;
+      left: -100px;
+      animation: float 8s ease-in-out infinite;
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0px);
+      }
+
+      50% {
+        transform: translateY(20px);
+      }
+    }
+
+    .hero-content {
+      text-align: center;
+      z-index: 10;
+      max-width: 900px;
+    }
+
+    .hero h1 {
+      font-size: 80px;
+      font-weight: 900;
+      color: #fff;
+      margin-bottom: 20px;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      line-height: 1.2;
+    }
+
+    .hero h2 {
+      font-size: 36px;
+      color: rgba(255, 255, 255, 0.9);
+      font-weight: 300;
+      margin-bottom: 30px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: rgba(255, 255, 255, 0.8);
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.8;
+    }
+
+    .loading-indicator {
+      position: absolute;
+      top: 30px;
+      right: 50px;
+      background: rgba(30, 41, 59, 0.9);
+      padding: 15px 25px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .loading-bar {
+      display: flex;
+      gap: 4px;
+    }
+
+    .loading-bar span {
+      width: 25px;
+      height: 8px;
+      background: #2563eb;
+      display: inline-block;
+      animation: loading 1.4s infinite ease-in-out;
+    }
+
+    .loading-bar span:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+
+    .loading-bar span:nth-child(3) {
+      animation-delay: 0.4s;
+    }
+
+    .loading-bar span:nth-child(4) {
+      animation-delay: 0.6s;
+    }
+
+    @keyframes loading {
+
+      0%,
+      80%,
+      100% {
+        opacity: 0.3;
+      }
+
+      40% {
+        opacity: 1;
+      }
+    }
+
+    /* Sobre Section */
+    .sobre {
+      background: #1e293b;
+      padding: 120px 50px;
+      position: relative;
+    }
+
+    .sobre-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .sobre-image {
+      position: relative;
+    }
+
+    .image-placeholder {
+      width: 100%;
+      height: 400px;
+      background: linear-gradient(180deg, #93c5fd 0%, #86efac 100%);
+      border-radius: 20px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    }
+
+    .image-placeholder::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 50%;
+      background: linear-gradient(180deg, transparent, #84cc16);
+      border-radius: 0 0 50% 50%;
+    }
+
+    .sobre-text h2 {
+      font-size: 48px;
+      color: #fff;
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+
+    .sobre-text h3 {
+      font-size: 32px;
+      color: #fff;
+      margin-bottom: 30px;
+    }
+
+    .sobre-text h3 span {
+      color: #2563eb;
+    }
+
+    .sobre-text p {
+      color: rgba(255, 255, 255, 0.8);
+      line-height: 1.8;
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+
+    /* Experiências Section */
+    .experiencias {
+      background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+      padding: 120px 50px;
+    }
+
+    .experiencias-content {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .experiencias h2 {
+      font-size: 48px;
+      color: #fff;
+      text-align: center;
+      margin-bottom: 30px;
+      font-weight: 700;
+    }
+
+    .experiencias p {
+      color: rgba(255, 255, 255, 0.9);
+      line-height: 1.8;
+      font-size: 16px;
+      margin-bottom: 20px;
+      text-align: center;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Modelos Section */
+    .modelos {
+      background: #1e293b;
+      padding: 120px 50px;
+    }
+
+    .modelos-content {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .modelos h2 {
+      font-size: 48px;
+      color: #fff;
+      text-align: center;
+      margin-bottom: 60px;
+      font-weight: 700;
+    }
+
+    .modelos-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+    }
+
+    .modelo-card {
+      background: rgba(30, 58, 138, 0.3);
+      border-radius: 20px;
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+      border: 1px solid rgba(37, 99, 235, 0.3);
+    }
+
+    .modelo-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(37, 99, 235, 0.4);
+    }
+
+    .modelo-card-image {
+      width: 100%;
+      height: 250px;
+      background: linear-gradient(180deg, #93c5fd 0%, #86efac 100%);
+      position: relative;
+    }
+
+    .modelo-card-image::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 40%;
+      background: linear-gradient(180deg, transparent, #84cc16);
+      border-radius: 0 0 50% 50%;
+    }
+
+    .modelo-card-content {
+      padding: 30px;
+      text-align: center;
+    }
+
+    .modelo-card h3 {
+      color: #fff;
+      font-size: 24px;
+      font-weight: 600;
+    }
+
+    /* Contato Section */
+    .contato {
+      background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+      padding: 120px 50px;
+    }
+
+    .contato-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .contato-text h2 {
+      font-size: 48px;
+      color: #fff;
+      margin-bottom: 40px;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .contato-info {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .contato-item {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      color: #fff;
+      font-size: 18px;
+    }
+
+    .contato-item svg {
+      width: 24px;
+      height: 24px;
+      fill: #fff;
+    }
+
+    .contato-visual {
+      position: relative;
+    }
+
+    .browser-mockup {
+      background: rgba(30, 41, 59, 0.8);
+      border-radius: 15px;
+      padding: 40px 30px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .browser-header {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+
+    .browser-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.3);
+    }
+
+    .browser-content {
+      background: rgba(255, 255, 255, 0.05);
+      height: 200px;
+      border-radius: 10px;
+    }
+
+    /* Footer */
+    footer {
+      background: #0f0f1e;
+      padding: 30px 50px;
+      text-align: center;
+      border-top: 1px solid rgba(37, 99, 235, 0.2);
+    }
+
+    footer p {
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 14px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      header {
+        padding: 20px;
+      }
+
+      nav {
+        display: none;
+      }
+
+      .hero h1 {
+        font-size: 48px;
+      }
+
+      .hero h2 {
+        font-size: 24px;
+      }
+
+      .sobre-content,
+      .contato-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .modelos-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+      <span>●</span> Tech a Dois
+    </div>
+    <nav>
+      <a href="#sobre">Sobre</a>
+      <a href="#experiencias">Experiências</a>
+      <a href="#modelos">Modelos</a>
+    </nav>
+    <a href="#contato" class="cta-button">Contrate</a>
+  </header>
+
+  <section class="hero">
+    <div class="loading-indicator">
+      <div class="loading-bar">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+    <div class="hero-content">
+      <h1>PORTFÓLIO</h1>
+      <h2>Landing Pages</h2>
+      <p>Criamos landing pages que convertem visitantes em clientes. Design moderno, responsivo e otimizado para
+        resultados.</p>
+    </div>
+  </section>
+
+  <section id="sobre" class="sobre">
+    <div class="sobre-content">
+      <div class="sobre-image">
+        <div class="image-placeholder"></div>
+      </div>
+      <div class="sobre-text">
+        <h2>Olá!</h2>
+        <h3>Somos a <span>Tech a Dois</span></h3>
+        <p>A Tech a Dois nasceu da união de um casal apaixonado por tecnologia e design. Com expertises complementares,
+          criamos landing pages que contam histórias e geram resultados.</p>
+        <p>Nossa missão é transformar suas ideias em experiências digitais memoráveis. Combinamos criatividade,
+          tecnologia e estratégia para criar páginas que não apenas impressionam visualmente, mas também convertem
+          visitantes em clientes.</p>
+        <p>Cada projeto é único. Trabalhamos lado a lado com nossos clientes para entender suas necessidades e entregar
+          soluções personalizadas que superam expectativas.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="experiencias" class="experiencias">
+    <div class="experiencias-content">
+      <h2>Nossas experiências juntos</h2>
+      <p>Sempre nos interessamos e estudamos temas e áreas de tecnologia na graduação. Um Analisa e Desenvolvimento de
+        Sistemas, Ela implementou e estruturou projetos relacionados à economia, estruturação e funcionamento de sites.
+        Em paralelo realizou workshops e certificações para aprender linguagens de programação que possibilitassem o
+        avanço profissional.</p>
+      <p>Juntos, combinamos habilidades únicas: desenvolvimento robusto, design intuitivo e estratégia de conversão.
+        Vivendo e trabalhando juntos, criamos sinergia perfeita em cada projeto – traduzindo sua visão em realidade
+        digital.</p>
+    </div>
+  </section>
+
+  <section id="modelos" class="modelos">
+    <div class="modelos-content">
+      <h2>Conheça um pouco mais dos nossos modelos</h2>
+      <div class="modelos-grid">
+        <div class="modelo-card">
+          <div class="modelo-card-image"></div>
+          <div class="modelo-card-content">
+            <h3>Institucional</h3>
+          </div>
+        </div>
+        <div class="modelo-card">
+          <div class="modelo-card-image"></div>
+          <div class="modelo-card-content">
+            <h3>Comercial</h3>
+          </div>
+        </div>
+        <div class="modelo-card">
+          <div class="modelo-card-image"></div>
+          <div class="modelo-card-content">
+            <h3>Portfólio</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contato" class="contato">
+    <div class="contato-content">
+      <div class="contato-text">
+        <h2>Fale conosco e faça seu orçamento</h2>
+        <div class="contato-info">
+          <div class="contato-item">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 0 0-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z" />
+            </svg>
+            <span>(43) 99907-8127</span>
+          </div>
+          <div class="contato-item">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+            </svg>
+            <span>(43)</span>
+          </div>
+          <div class="contato-item">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z" />
+            </svg>
+            <span>@barbaraazaa</span>
+          </div>
+        </div>
+      </div>
+      <div class="contato-visual">
+        <div class="browser-mockup">
+          <div class="browser-header">
+            <div class="browser-dot"></div>
+            <div class="browser-dot"></div>
+            <div class="browser-dot"></div>
+          </div>
+          <div class="browser-content"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2024 Tech a Dois. Todos os direitos reservados.</p>
+  </footer>
+</body>
+
+</html>

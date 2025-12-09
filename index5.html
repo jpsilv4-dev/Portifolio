@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tech a Dois</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+    }
+
+    /* NAVBAR */
+    .navbar {
+      width: 100%;
+      padding: 20px 60px;
+      background-color: #4A8FE7;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-sizing: border-box;
+    }
+
+    .navbar img {
+      height: 60px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: white;
+      font-size: 20px;
+      font-weight: 500;
+    }
+
+    .btn-contrate {
+      background: #0066FF;
+      padding: 10px 30px;
+      border-radius: 30px;
+      color: white !important;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    /* HERO */
+    .hero-section {
+      width: 100%;
+      height: 650px;
+      background-image: url('assets/hero-bg.jpg');
+      /* coloque sua imagem real aqui */
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    /* CARD DA HERO */
+    .hero-card {
+      background: rgba(52, 132, 235, 0.75);
+      padding: 40px 50px;
+      width: 450px;
+      border-radius: 20px;
+      color: white;
+      backdrop-filter: blur(4px);
+      text-align: center;
+    }
+
+    .hero-card h1 {
+      margin-top: 0;
+      font-size: 36px;
+      font-weight: 800;
+    }
+
+    .hero-card p {
+      font-size: 18px;
+      line-height: 1.5;
+      font-weight: 300;
+    }
+
+    .hero-card button {
+      margin-top: 20px;
+      padding: 14px 30px;
+      background: #0066FF;
+      border: none;
+      border-radius: 30px;
+      color: white;
+      font-size: 18px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <div class="navbar">
+    <img src="assets/logo.png" alt="Logo Tech a Dois">
+
+    <div class="nav-links">
+      <a href="#sobre">Sobre</a>
+      <a href="#experiencia">Experiência</a>
+      <a href="#modelos">Modelos</a>
+      <a href="#contato" class="btn-contrate">Contrate</a>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <div class="hero-section">
+
+    <div class="hero-card">
+      <h1>Tech a Dois</h1>
+      <p>
+        Aqui oferecemos serviços de Landing Pages para pequenas empresas interessadas
+        em tornar seu negócio ainda mais profissional e prático no dia a dia.
+      </p>
+
+      <button>Entre em contato</button>
+    </div>
+
+  </div>
+
+  <section id="sobre" style="width:100%; padding:80px 20px; background:#1f2a52; display:flex; justify-content:center;">
+    <div style="max-width:1300px; width:100%; display:flex; align-items:center; gap:60px; flex-wrap:wrap;">
+
+      <!-- LADO ESQUERDO - IMAGENS -->
+      <div style="flex:1; min-width:300px; position:relative;">
+
+        <!-- Imagem 1 -->
+        <div style="
+          width:260px; 
+          height:260px; 
+          background:#ffffff; 
+          border-radius:20px; 
+          box-shadow:0 0 20px rgba(0,0,0,0.15);
+        "></div>
+
+        <!-- Imagem 2 (sobreposição) -->
+        <div style="
+          width:260px; 
+          height:260px; 
+          background:#ffffff; 
+          border-radius:20px; 
+          box-shadow:0 0 20px rgba(0,0,0,0.15);
+          position:absolute;
+          top:180px;
+          left:120px;
+        "></div>
+
+      </div>
+
+      <!-- LADO DIREITO - TEXTO -->
+      <div style="flex:1; min-width:320px; color:#ffffff;">
+
+        <h2 style="
+          font-size:60px; 
+          font-weight:700; 
+          margin:0;
+          line-height:1.1;
+          color:#ffffff;
+        ">Olá!</h2>
+
+        <h3 style="
+          font-size:48px; 
+          margin:10px 0 30px 0; 
+          font-weight:700;
+          color:#ffffff;
+        ">
+          Somos o <span style="color:#0a58ff;">Tech a Dois</span>
+        </h3>
+
+        <p style="
+          font-size:20px; 
+          line-height:1.6; 
+          color:#e6e6e6; 
+          margin-bottom:25px;
+        ">
+          A Tech a Dois nasceu da união de um casal apaixonado
+          por tecnologia e pelo desejo de empreender juntos.
+          Percebemos que muitas empresas de Apucarana e região
+          precisavam fortalecer sua presença online e decidimos
+          transformar nossa parceria em uma marca.
+        </p>
+
+        <p style="
+          font-size:20px; 
+          line-height:1.6; 
+          color:#e6e6e6;
+        ">
+          Hoje, criamos landing pages modernas, estratégicas e
+          feitas com cuidado, unindo criatividade, técnica e o
+          propósito de ajudar negócios locais a crescerem no digital.
+        </p>
+
+      </div>
+
+    </div>
+  </section>
+
+  <section id="experiencias" style="width:100%;">
+
+    <!-- Faixa superior -->
+    <div style="width:100%; height:160px; background:#5a92d6;"></div>
+
+    <!-- Centro da seção -->
+    <div style="
+      width:100%; 
+      background:#0a51f5; 
+      padding:80px 20px;
+      text-align:center;
+      color:#ffffff;
+    ">
+
+      <h2 style="
+        font-size:60px;
+        font-weight:700;
+        margin:0 0 40px 0;
+        font-family:serif;
+        color:#ffffff;
+      ">
+        Nossas experiências juntos
+      </h2>
+
+      <p style="
+        max-width:1100px;
+        margin:0 auto 40px auto;
+        font-size:22px;
+        line-height:1.7;
+        font-weight:300;
+      ">
+        Somando nossas formações e vivências, unimos o melhor da tecnologia e da comunicação.
+        Ele, graduando em Análise e Desenvolvimento de Sistemas, traz conhecimentos sólidos
+        em programação, informática e montagem de computadores, garantindo soluções funcionais,
+        estruturadas e tecnicamente eficientes. Eu, graduanda em Publicidade e Propaganda e atuante
+        em agência, contribuo com estratégia, criatividade e experiência em comunicação,
+        conteúdo e design.
+      </p>
+
+      <p style="
+        max-width:900px;
+        margin:0 auto;
+        font-size:22px;
+        line-height:1.7;
+        font-weight:300;
+      ">
+        Juntos, combinamos lógica e criatividade para desenvolver projetos completos,
+        unindo desempenho técnico com estética e propósito — a essência da Tech a Dois.
+      </p>
+
+    </div>
+
+    <!-- Faixa inferior -->
+    <div style="width:100%; height:160px; background:#5a92d6;"></div>
+
+  </section>
+  <section id="modelos" style="background:#1d2951; width:100%; padding:80px 20px; text-align:center;">
+
+    <h2 style="
+        font-size:52px;
+        font-weight:700;
+        margin-bottom:60px;
+        color:#0a51f5;
+        font-family:serif;
+    ">
+      Conheça um pouco mais dos nossos modelos
+    </h2>
+
+    <div style="
+        display:flex;
+        justify-content:center;
+        gap:40px;
+        flex-wrap:wrap;
+        max-width:1400px;
+        margin:0 auto;
+    ">
+
+      <!-- CARD HAMBURGUERIA -->
+      <div style="text-align:center;">
+        <h3 style="
+                color:white;
+                font-size:22px;
+                margin-bottom:15px;
+                text-decoration:underline;
+            ">Hamburgueria</h3>
+
+        <div style="
+                width:360px;
+                height:620px;
+                background:white;
+                border-radius:20px;
+                overflow:hidden;
+                box-shadow:0 4px 15px rgba(0,0,0,0.2);
+                display:flex;
+                align-items:center;
+                justify-content:center;
+            ">
+          <img src="assets/hamburgueria-placeholder.png" alt="Modelo Hamburgueria" style="width:100%; height:auto;">
+        </div>
+      </div>
+
+      <!-- CARD CAFETERIA -->
+      <div style="text-align:center;">
+        <h3 style="
+                color:white;
+                font-size:22px;
+                margin-bottom:15px;
+                text-decoration:underline;
+            ">Cafeteria</h3>
+
+        <div style="
+                width:360px;
+                height:620px;
+                background:white;
+                border-radius:20px;
+                overflow:hidden;
+                box-shadow:0 4px 15px rgba(0,0,0,0.2);
+                display:flex;
+                align-items:center;
+                justify-content:center;
+            ">
+          <img src="assets/cafeteria-placeholder.png" alt="Modelo Cafeteria" style="width:100%; height:auto;">
+        </div>
+      </div>
+
+      <!-- CARD PASTELARIA -->
+      <div style="text-align:center;">
+        <h3 style="
+                color:white;
+                font-size:22px;
+                margin-bottom:15px;
+                text-decoration:underline;
+            ">Pastelaria</h3>
+
+        <div style="
+                width:360px;
+                height:620px;
+                background:white;
+                border-radius:20px;
+                overflow:hidden;
+                box-shadow:0 4px 15px rgba(0,0,0,0.2);
+                display:flex;
+                align-items:center;
+                justify-content:center;
+            ">
+          <img src="assets/pastelaria-placeholder.png" alt="Modelo Pastelaria" style="width:100%; height:auto;">
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+  <section style="width: 100%; padding: 80px 20px; background: #5AA3E8; position: relative;">
+
+    <!-- Fundo da seção -->
+    <div style="
+        background-image: url('contato-bg.jpg');
+        background-size: cover;
+        background-position: center;
+        filter: brightness(0.6);
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+    "></div>
+
+    <!-- Conteúdo da seção -->
+    <div style="
+        position: relative;
+        z-index: 2;
+        max-width: 900px;
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 40px;
+    ">
+
+      <!-- Card de Contato -->
+      <div style="
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px 35px;
+            border-radius: 28px;
+            width: 100%;
+            max-width: 450px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            text-align: left;
+            font-family: 'Poppins', sans-serif;
+        ">
+
+        <h2 style="
+                font-size: 28px;
+                font-weight: 700;
+                color: #1C3C78;
+                text-align: center;
+                margin-bottom: 10px;
+            ">Fale conosco<br>e faça seu orçamento</h2>
+
+        <p style="
+                text-align: center;
+                color: #4a4a4a;
+                margin-bottom: 25px;
+            ">Estamos prontos para ajudar!</p>
+
+
+        <!-- Telefone -->
+        <div style="margin-bottom: 20px;">
+          <span style="font-size: 22px;">📞</span>
+          <span style="font-size: 16px; margin-left: 8px; color: #333;">Telefone</span><br>
+          <span style="margin-left: 32px; color: #555;">(43) 99907-8127</span>
+        </div>
+
+        <!-- E-mail -->
+        <div style="margin-bottom: 20px;">
+          <span style="font-size: 22px;">✉️</span>
+          <span style="font-size: 16px; margin-left: 8px; color: #333;">E-mail</span><br>
+          <span style="margin-left: 32px; color: #555;">blogtechadois@gmail.com</span>
+        </div>
+
+        <!-- Redes sociais -->
+        <div style="margin-bottom: 25px;">
+          <span style="font-size: 22px;">📷</span>
+          <span style="font-size: 16px; margin-left: 8px; color: #333;">Redes sociais</span><br>
+          <span style="margin-left: 32px; color: #555; display: block;">@barbararozzaa</span>
+          <span style="margin-left: 32px; color: #555;">@eu.joaop_silva</span>
+        </div>
+
+        <!-- Horário -->
+        <div style="margin-bottom: 30px;">
+          <span style="font-size: 22px;">⏰</span>
+          <span style="font-size: 16px; margin-left: 8px; color: #333;">Horário de atendimento</span><br>
+          <span style="margin-left: 32px; color: #555;">Seg a Sex — 08h às 18h</span><br>
+          <span style="margin-left: 32px; color: #555;">Sáb — 08h às 12h</span>
+        </div>
+
+        <!-- Botão -->
+        <div style="text-align: center;">
+          <a href="https://wa.me/5543999078127" target="_blank" style="
+                    display: inline-block;
+                    background: #1C3C78;
+                    color: white;
+                    padding: 14px 28px;
+                    border-radius: 14px;
+                    font-size: 16px;
+                    font-weight: 600;
+                    text-decoration: none;
+                    transition: 0.3s;
+                " onmouseover="this.style.background='#274d9c'" onmouseout="this.style.background='#1C3C78'">Enviar
+            mensagem</a>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</body>
+
+</html>
